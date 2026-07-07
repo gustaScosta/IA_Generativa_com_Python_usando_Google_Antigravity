@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para garantir que a página seja responsiva em telas móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <!-- Vinculação da folha de estilo CSS externa contendo a identidade visual e posicionamento -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Elemento principal da página usado para garantir boas práticas de semântica HTML5 -->
+    <main>
+        <!-- Seção contendo o cartão do formulário e suas variações de telas de confirmação/sucesso -->
+        <section class="form-container">
+            
+            <!-- Área de cabeçalho dinâmico. Títulos alterados via JS para orientar o fluxo do usuário -->
+            <div id="header-area">
+                <h1 id="main-title">Fale Conosco</h1>
+                <p id="main-subtitle" class="subtitle">Envie sua mensagem e entraremos em contato em breve.</p>
+            </div>
+            
+            <!-- VIEW 1: Tela Inicial com o Formulário de Contato -->
+            <form id="form-view">
+                <!-- Nome do usuário: Campo do tipo text com validação required -->
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+                
+                <!-- E-mail do usuário: Campo do tipo email para validação de formato nativa do navegador -->
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+                </div>
+                
+                <!-- Mensagem: Campo do tipo textarea para textos longos de forma acessível -->
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar você?" required></textarea>
+                </div>
+                
+                <!-- Botão do tipo submit que dispara o evento de envio do formulário -->
+                <button type="submit" id="btn-submit">Enviar Mensagem</button>
+            </form>
+
+            <!-- VIEW 2: Tela de Confirmação de Dados (Oculta por padrão com a classe view-hidden) -->
+            <div id="confirm-view" class="view-hidden">
+                <div class="summary-details">
+                    <!-- Resumo do Nome digitado -->
+                    <div class="summary-item">
+                        <span class="summary-label">Nome:</span>
+                        <p id="confirm-nome" class="summary-value"></p>
+                    </div>
+                    <!-- Resumo do E-mail digitado -->
+                    <div class="summary-item">
+                        <span class="summary-label">E-mail:</span>
+                        <p id="confirm-email" class="summary-value"></p>
+                    </div>
+                    <!-- Resumo da Mensagem digitada -->
+                    <div class="summary-item">
+                        <span class="summary-label">Mensagem:</span>
+                        <p id="confirm-mensagem" class="summary-value"></p>
+                    </div>
+                </div>
+                <!-- Ações para Confirmar ou Voltar para fazer edições nos dados -->
+                <div class="button-group">
+                    <button type="button" id="btn-confirm-ok" class="btn-primary">Confirmar Dados</button>
+                    <button type="button" id="btn-confirm-back" class="btn-secondary">Voltar e Editar</button>
+                </div>
+            </div>
+
+            <!-- VIEW 3: Tela de Sucesso Final (Oculta por padrão com a classe view-hidden) -->
+            <div id="success-view" class="view-hidden">
+                <div class="success-message">
+                    <!-- Ícone visual de sucesso -->
+                    <div class="success-icon">✓</div>
+                    <p>Sua mensagem foi enviada com sucesso! Agradecemos o contato.</p>
+                </div>
+                <!-- Ação que reseta o fluxo permitindo o envio de novos dados -->
+                <button type="button" id="btn-success-reset">Enviar Nova Mensagem</button>
+            </div>
+            
+        </section>
+    </main>
+    <!-- Inclusão do arquivo JavaScript que manipula o comportamento dinâmico da página -->
+    <script src="script.js"></script>
+</body>
+</html>

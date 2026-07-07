@@ -1,0 +1,15 @@
+Primeiro prompt:
+Crie um prompt no Google Antigravity que instrua a IA a gerear um programa em Python. O programa deve gerar um senha 
+aleatório de 8 caracteres.
+
+Segundo prompt:
+No segundo prompt, indique à IA que a senha não deve ter um tamanho fixo. O usuário deve indicar o tamanho da senha através 
+de um INPUT, porém o tamanho não pode ser inferior a 8 caracteres.
+
+Terceiro prompt:
+No terceiro prompt, indique à IA que coloque a lógica da criação de senha dentro de uma função e use as boas práticas de 
+programação usando a função main() que deve ser chamada a partir de uma condicional 'if __name__ == "__main__:". Nesse prompt 
+instrua a IA a inserir uma bloco de exceção para capturar erros.
+
+Quarto prompt:
+No quarto prompt, indique à IA que gere a documentação.

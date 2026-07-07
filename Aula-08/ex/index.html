@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DevStack Solutions</title>
+    <!-- Meta tags de SEO básicas -->
+    <meta name="description" content="Central de Ajuda da DevStack Solutions. Tire suas dúvidas sobre desenvolvimento de software, APIs RESTful, JavaScript (let, const, var) e Git/GitHub.">
+    
+    <!-- Link para fontes externas e estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal (Header) -->
+    <header class="main-header" id="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-accent">&lt;</span>DevStack Solutions<span class="logo-accent">/&gt;</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#faq" class="active">FAQ</a>
+                <a href="mailto:suporte@devstack.com">Suporte</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contêiner Principal da Página -->
+    <main class="page-container">
+        
+        <!-- Hero / Introdução -->
+        <section class="hero-section">
+            <h1>Perguntas Frequentes</h1>
+            <p class="subtitle">Encontre respostas rápidas para as principais dúvidas sobre programação e desenvolvimento de software.</p>
+            
+            <!-- Barra de Busca Interativa para Escalabilidade -->
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Digite sua dúvida ou palavra-chave..." aria-label="Buscar perguntas frequentes">
+            </div>
+        </section>
+
+        <!-- Seção do FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="faq-container" id="faq-list">
+                
+                <!-- Pergunta 1 -->
+                <div class="faq-item" data-question="o que e uma api restful rest http">
+                    <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
+                        <span class="faq-question">O que é uma API RESTful?</span>
+                        <span class="faq-arrow-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-content" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+                        <div class="faq-answer">
+                            <p>Uma <strong>API RESTful</strong> é uma interface de programação de aplicações (API) que segue os princípios e restrições do estilo arquitetural <strong>REST</strong> (Representational State Transfer).</p>
+                            <p>Ela permite a comunicação entre sistemas diferentes na web de forma eficiente e padronizada utilizando protocolos nativos da web, principalmente o <strong>HTTP</strong>. Seus principais conceitos incluem:</p>
+                            <ul>
+                                <li><strong>Recursos:</strong> Tudo é mapeado como recursos identificados por URIs únicas (ex: <code>/usuarios</code>).</li>
+                                <li><strong>Métodos HTTP:</strong> Utilização correta dos verbos como <code>GET</code> (leitura), <code>POST</code> (criação), <code>PUT</code> (atualização) e <code>DELETE</code> (exclusão).</li>
+                                <li><strong>Stateless:</strong> Cada requisição contém todas as informações necessárias para ser processada, sem armazenar sessões no servidor.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="faq-item" data-question="qual a diferenca entre let const e var no javascript js escopo">
+                    <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
+                        <span class="faq-question">Qual a diferença entre Let, Const e Var no JavaScript?</span>
+                        <span class="faq-arrow-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-content" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+                        <div class="faq-answer">
+                            <p>No JavaScript moderno (ES6+), existem três maneiras de declarar variáveis com diferenças cruciais em escopo, hoisting (içamento) e reatribuição:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Palavra-chave</th>
+                                        <th>Escopo</th>
+                                        <th>Hoisting</th>
+                                        <th>Reatribuição</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>var</code></td>
+                                        <td>Função</td>
+                                        <td>Sim (inicializado como undefined)</td>
+                                        <td>Permite</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>let</code></td>
+                                        <td>Bloco <code>{ }</code></td>
+                                        <td>Não (fica na Temporal Dead Zone)</td>
+                                        <td>Permite</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>const</code></td>
+                                        <td>Bloco <code>{ }</code></td>
+                                        <td>Não (fica na Temporal Dead Zone)</td>
+                                        <td>Não permite</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="tip"><strong>Dica:</strong> Prefira sempre usar <code>const</code> por padrão para evitar mutações acidentais, e use <code>let</code> apenas quando o valor precisar ser reatribuído.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="faq-item" data-question="o que e para que serve o git github controle versao repositorio">
+                    <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
+                        <span class="faq-question">O que é e para que serve o Git/GitHub?</span>
+                        <span class="faq-arrow-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-content" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+                        <div class="faq-answer">
+                            <p>Embora frequentemente usados juntos, <strong>Git</strong> e <strong>GitHub</strong> são ferramentas distintas com propósitos complementares no fluxo de trabalho de um desenvolvedor:</p>
+                            <p><strong>1. Git (O Sistema):</strong> É um software de controle de versão distribuído que roda localmente no seu computador. Ele serve para:</p>
+                            <ul>
+                                <li>Registrar todo o histórico de alterações feitas nos arquivos de um projeto.</li>
+                                <li>Facilitar a criação de ramificações (<code>branches</code>) para testar novas funcionalidades sem afetar a versão principal estável.</li>
+                                <li>Reverter arquivos para estados anteriores de forma rápida e segura.</li>
+                            </ul>
+                            <p><strong>2. GitHub (A Plataforma):</strong> É um serviço de hospedagem web na nuvem para repositórios que utilizam o Git. Ele serve para:</p>
+                            <ul>
+                                <li>Armazenar os repositórios Git externamente de forma segura.</li>
+                                <li>Colaborar com outros desenvolvedores através de ferramentas como <code>Pull Requests</code> (propostas de alteração de código) e <code>Issues</code> (relato de bugs ou tarefas).</li>
+                                <li>Automatizar fluxos de build, testes e deploy de aplicações (CI/CD).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensagem de feedback caso nenhum resultado seja encontrado na busca -->
+                <div id="no-results" class="no-results-message hidden">
+                    <p>Nenhuma pergunta correspondente encontrada. Tente buscar por outros termos!</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé (Footer) com estilo diferenciado e contraste de cor -->
+    <footer class="main-footer" id="main-footer">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 DevStack Solutions. Todos os direitos reservados.</p>
+            <p class="developer-info">Desenvolvido com carinho para fins didáticos.</p>
+        </div>
+    </footer>
+
+    <!-- Arquivo JavaScript para comportamento dinâmico -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* Importação da fonte do Google Fonts 'Plus Jakarta Sans' para uma tipografia moderna */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ----------------------------------------------------
+   Variáveis de Cores (Paleta de Identidade Visual)
+   ---------------------------------------------------- */
+:root {
+    --bg-page: #00022e;            /* Azul Escuro (Cor de fundo da página) */
+    --card-bg: #ffffff;            /* Branco (Cor do cartão do formulário) */
+    --text-primary: #00022e;       /* Azul Escuro (Para textos principais e rótulos) */
+    --text-secondary: #5e6b84;     /* Cinza azulado (Para subtítulos e textos auxiliares) */
+    --accent: #f90016;             /* Vermelho (Cor de destaque para botões principais e focos) */
+    --accent-hover: #d10012;       /* Vermelho Escuro (Para efeito hover nos botões) */
+    --input-border: #ccd6e0;       /* Cor padrão das bordas dos inputs */
+    --input-focus: #f90016;        /* Cor da borda do input selecionado */
+    --btn-secondary-bg: #f1f5f9;   /* Cor de fundo do botão secundário (Voltar e Editar) */
+    --btn-secondary-hover: #e2e8f0;/* Cor de hover do botão secundário */
+}
+
+/* ----------------------------------------------------
+   Reset Básico e Estilos Globais
+   ---------------------------------------------------- */
+* {
+    box-sizing: border-box; /* Garante que padding e bordas não afetem a largura total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    min-height: 100vh; /* Ocupa no mínimo 100% da altura da viewport */
+    
+    /* Flexbox para centralizar o contêiner principal na vertical e na horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    padding: 20px;
+}
+
+/* ----------------------------------------------------
+   Layout do Cartão (Form Container)
+   ---------------------------------------------------- */
+main {
+    width: 100%;
+    max-width: 480px; /* Limita a largura máxima do formulário para desktop/tablets */
+    transition: all 0.3s ease;
+}
+
+.form-container {
+    background: var(--card-bg);
+    border-radius: 20px; /* Bordas arredondadas e modernas */
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra elegante abaixo do cartão */
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------
+   Estilos de Campos de Formulário (Inputs)
+   ---------------------------------------------------- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+input, textarea {
+    background: #ffffff;
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Efeito de Foco nos Inputs */
+input:focus, textarea:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(249, 0, 22, 0.15); /* Brilho sutil vermelho ao focar */
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar apenas na vertical */
+    min-height: 120px;
+}
+
+/* ----------------------------------------------------
+   Estilos Gerais para Botões
+   ---------------------------------------------------- */
+button {
+    width: 100%;
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px); /* Pequeno efeito de elevação no hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Efeito de clique físico no botão */
+}
+
+/* Classe utilitária para ocultar visualizações via JavaScript */
+.view-hidden {
+    display: none !important;
+}
+
+/* ----------------------------------------------------
+   Estilos da Tela de Confirmação de Dados
+   ---------------------------------------------------- */
+.summary-details {
+    background-color: #f8fafc; /* Fundo cinza claro para contraste */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.summary-item {
+    margin-bottom: 16px;
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.summary-label {
+    font-size: 0.8rem;
+    font-weight: 750;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.summary-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    word-break: break-word; /* Quebra palavras muito longas para evitar quebra de layout */
+    white-space: pre-wrap;   /* Preserva as quebras de linha enviadas no textarea */
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Botão secundário (Voltar e Editar) */
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--text-primary);
+    border: 2px solid var(--input-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+/* ----------------------------------------------------
+   Estilos da Tela de Sucesso Final
+   ---------------------------------------------------- */
+.success-message {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 24px;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    color: #10b981; /* Verde de sucesso */
+    margin-bottom: 16px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background-color: #ecfdf5; /* Fundo circular verde bem suave */
+}
+
+.success-message p {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* ----------------------------------------------------
+   Media Queries para Responsividade em Dispositivos Móveis
+   ---------------------------------------------------- */
+@media (max-width: 600px) {
+    main {
+        width: 90%; /* Garante que ocupe exatamente 90% da largura em telas pequenas */
+    }
+    
+    .form-container {
+        padding: 30px 20px; /* Reduz o padding para ganhar mais espaço útil */
+    }
+}
